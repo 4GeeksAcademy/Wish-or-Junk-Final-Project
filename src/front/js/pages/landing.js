@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { Context } from "../store/appContext";
+import React from "react";
 import { Navbar } from "../component/navbar";
 import { Footer } from "../component/footer";
 import "../../styles/home.css";
