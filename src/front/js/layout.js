@@ -7,6 +7,7 @@ import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 import { Landing } from "./pages/landing";
+import { Profile } from "./pages/profile";
 
 
 //create your first component
@@ -22,7 +23,8 @@ const Layout = () => {
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
                     <Routes>
-                        <Route element={<Landing />} path="/" />
+                        <Route element={<Landing />} path="/landing" />
+                        <Route element={<Profile />} path="/profile" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />

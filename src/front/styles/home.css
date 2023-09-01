@@ -13,9 +13,15 @@ body{
 
 .links{
     background-image: linear-gradient(-134deg, #D4AF37 0%, #6D4300 100%)
+
 }
 
 .mission{
  height: 80vh;
  max-width: auto;
+}
+
+.main{
+    border-radius: 25px;
+    
 }
