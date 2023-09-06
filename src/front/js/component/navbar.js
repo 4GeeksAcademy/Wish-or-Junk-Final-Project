@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const Navbar = () => {
+export const Navbar = ({ openSignupModal }) => {
 	return (
+
 		<nav className="navbar bg-transparent">
 			<div className="container-fluid ms-0">
 				<Link to="/">
@@ -29,9 +30,10 @@ export const Navbar = () => {
 							Shuffle
 						</button>
 					</Link>
-					<Link to="/sign-up">
-						<button className="btn links">Sign Up</button>
-					</Link>
+					<button className="btn links" onClick={openSignupModal}>
+ 						 Sign Up
+					</button>
+
 				</div>
 			</div>
 		</nav>
