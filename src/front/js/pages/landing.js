@@ -28,10 +28,10 @@ export const Landing = () => {
      <Navbar openSignupModal={openSignupModal} />
       <div className="container-fluid mx-3 d-flex overflow-y-auto text-light mission">
         <div className="mt-4 mx-auto">
-          <h3 className="mt-2 ms-1 py-2 fs-4">
+          <h3 className="mt-2 ms-1 py-2 fs-4 mt-5">
             THINK YOU WITNESSED A SHOOTING STAR?
           </h3>
-          <h1 className="ms-1 py-2 w-75">
+          <h1 className="main-headline ms-1 py-2 w-75">
             In any 15-minute interval, there's a 20% probability of observing at
             least one shooting star.
           </h1>
