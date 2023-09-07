@@ -20,6 +20,11 @@ body{
  max-width: auto;
 }
 
+
+.main{
+    border-radius: 25px;
+}   
+
 .modal-container {
   position: fixed;
   top: 50%;
