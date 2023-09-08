@@ -9,6 +9,8 @@ import injectContext from "./store/appContext";
 import { Landing } from "./pages/landing";
 import { Login } from "./pages/login";
 import { Signup} from "./pages/signup";
+import { Shuffle } from "./pages/shuffle";
+import {AboutUs} from "./pages/aboutus";
 
 //create your first component
 const Layout = () => {
@@ -25,6 +27,8 @@ const Layout = () => {
                     <Routes>
                         <Route element={<Login />} path="/login" />
                         <Route element={<Signup />} path="/signup" />
+                        <Route element={<AboutUs/>} path="/about-us"/>
+                        <Route element={<Shuffle/>} path="/shuffle"/>
                         <Route element={<Landing />} path="/" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />

@@ -1,9 +1,7 @@
-import React, { useContext } from "react";
-import { Context } from "../store/appContext";
-import "../styles/AboutUs.css";
+import React from "react";
+import "../styles/aboutus.css";
 
 export const AboutUs = () => {
-    const { store, actions } = useContext(Context);
 
     return (
         <div className="container">
