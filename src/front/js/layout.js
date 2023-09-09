@@ -10,7 +10,7 @@ import { Landing } from "./pages/landing";
 import { Login } from "./pages/login";
 import { Signup} from "./pages/signup";
 import { Shuffle } from "./pages/shuffle";
-import {AboutUs} from "./pages/aboutus";
+import { Aboutus } from "./pages/aboutus";
 
 //create your first component
 const Layout = () => {
@@ -27,7 +27,7 @@ const Layout = () => {
                     <Routes>
                         <Route element={<Login />} path="/login" />
                         <Route element={<Signup />} path="/signup" />
-                        <Route element={<AboutUs/>} path="/about-us"/>
+                        <Route element={<Aboutus/>} path="/about-us"/>
                         <Route element={<Shuffle/>} path="/shuffle"/>
                         <Route element={<Landing />} path="/" />
                         <Route element={<Demo />} path="/demo" />

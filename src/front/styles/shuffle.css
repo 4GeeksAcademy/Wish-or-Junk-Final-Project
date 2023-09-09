@@ -1,0 +1,14 @@
+.shuffy{
+    background-color: black !important;
+    width: max-content;
+    height: max-content;
+}
+
+img{
+    max-width: fit-content;
+    height: fit-content;
+}
+video{
+    max-width: fit-content;
+    height: fit-content
+}
