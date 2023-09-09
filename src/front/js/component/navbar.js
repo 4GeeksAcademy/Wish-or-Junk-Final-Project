@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar bg-transparent">
+		<nav className="navbar bg-transparent mt-2">
 			<div className="container-fluid ms-0">
 				<Link to="/">
 					<span className="navbar-brand ms-1 btn text-white fw-bold project">Wish Or Junk</span>

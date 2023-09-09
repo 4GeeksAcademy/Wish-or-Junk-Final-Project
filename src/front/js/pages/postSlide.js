@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Navbar } from "../component/navbar";
 import { Footer } from "../component/footer";
 import { PostCard } from "../component/postCard";
+import { PostModal } from "../component/postModal";
 
 import { Link } from "react-router-dom";
 
@@ -22,6 +23,7 @@ export const PostSlide = () => {
                     <PostCard />
                 </div>    
             </div>
+            <PostModal />
             
             <Footer />
         </div>

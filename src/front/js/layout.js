@@ -8,6 +8,8 @@ import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 import { Landing } from "./pages/landing";
 import { Profile } from "./pages/profile";
+import { EditProfile } from "./component/editProfile";
+import { PostSlide } from "./pages/postSlide";
 
 
 //create your first component
@@ -25,6 +27,8 @@ const Layout = () => {
                     <Routes>
                         <Route element={<Landing />} path="/landing" />
                         <Route element={<Profile />} path="/profile" />
+                        <Route element={<EditProfile />} path="/edit-profile" />
+                        <Route element={<PostSlide />} path="/posts" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />

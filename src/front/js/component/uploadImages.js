@@ -1,28 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 
-export default function UploadImages() {
-    const [images, setImages] = useState([]);
-    const [imageURLs, setImageURLs] = useState([]);
-        
-    useEffect(() => {
-        if (images.length < 1) return;
-        const newImageUrls = [];
-        images.forEach(image => newImageUrls.push(URL.createObjectURL(image)));
-        setImageURLs(newImageUrls);
-    }, [images]);
+export const UploadImages = () => {
 
-    function onImageChange(e) {
-        setImages([...e.target.files]);
+const [file, setFile] = useState();
+    function handleChange(e) {
+        console.log(e.target.files);
+        setFile(URL.createObjectURL(e.target.files[0]));
     }
-
+ 
     return (
-        <>
-            <imput type="file" multiple accepts="image/*" onChange={onImageChange} />
-            { imageURLs.map(imageSrc => <img src={imageSrc} />) }
-        </>
+        <div className="App">
+            <h2>Add Image:</h2>
+            <input type="file" onChange={handleChange} />
+            <img src={file} />
+ 
+        </div>
+ 
     );
-
-};
-
+}
 
