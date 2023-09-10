@@ -18,12 +18,77 @@ def handle_hello():
 
 
 @api.route("/posts", methods=["GET"])
-def posts():
-    """ """
-    return jsonify(posts=[post.serialize() for post in Post.query.all()])
+def get_posts():
+    posts = Post.query.all()
+    """ 
+    GET all posts
+    """
+    return jsonify(posts=[post.serialize() for post in posts])
+
+
+@api.route("/posts/<int:id>", methods=["GET"])
+def get_post(id):
+    """
+    GET posts by ID
+    """
+    post = Post.query.filter_by(id=id).first()
+    if post:
+        return jsonify(post=post.serialize())
+    return jsonify(message=f"No post with ID: {id} found", post=None)
+
+
+@api.route("/posts", methods=["POST"])
+def post_posts():
+    """
+    POST new post
+    """
+    post_data = request.json
+    new_post = Post(
+        author_id=post_data.get("authror_id", 1),
+        title=post_data.get("title", "Untitled"),
+        body=post_data.get("body", "The pic says it all!"),
+    )
+
+    db.session.merge(new_post)
+    db.session.commit()
+    return "", 204
 
 
 @api.route("/comments", methods=["GET"])
-def comments():
-    """ """
-    return jsonify(comments=[comment.serialize() for comment in Comment.query.all()])
+def get_comments():
+    """
+    GET all comments
+    """
+    comments = Comment.query.all()
+    if comments:
+        return jsonify(comments=[comment.serialize() for comment in comments])
+    return jsonify(message="No Comments Found", comments=None)
+
+
+@api.route("/comments/<int:id>", methods=["GET"])
+def get_comment(id):
+    """
+    GET comment by ID
+    """
+    comments = Comment.query.filter_by(id=id).first()
+    if comments:
+        return jsonify(comments=comments.serialize())
+    return jsonify(message=f"Comment ID {id} not found", comments=None)
+
+
+@api.route("/comments", methods=["POST"])
+def new_comments():
+    """
+    POST
+    """
+    comment_data = request.json
+    new_comment = Comment(
+        author_id=comment_data.get("author_id", 1),
+        body=comment_data.get("body", "Is that your wish? Or just more junk?"),
+        post_id=comment_data.get("post_id",None)
+
+    )
+    
+    db.session.merge(new_comment)
+    db.session.commit()
+    return "", 204
