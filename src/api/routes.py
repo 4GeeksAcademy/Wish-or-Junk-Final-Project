@@ -2,8 +2,9 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Post, Comment
+from api.models import db, User, Post, Comment, Image
 from api.utils import generate_sitemap, APIException
+from datetime import datetime
 
 api = Blueprint("api", __name__)
 
@@ -47,8 +48,9 @@ def post_posts():
         author_id=post_data.get("authror_id", 1),
         title=post_data.get("title", "Untitled"),
         body=post_data.get("body", "The pic says it all!"),
+        created_date=datetime.now(),
+        image=get_image(post_data.get("image")).id,
     )
-
     db.session.merge(new_post)
     db.session.commit()
     return "", 204
@@ -85,10 +87,48 @@ def new_comments():
     new_comment = Comment(
         author_id=comment_data.get("author_id", 1),
         body=comment_data.get("body", "Is that your wish? Or just more junk?"),
-        post_id=comment_data.get("post_id",None)
-
+        post_id=comment_data.get("post_id", None),
+        created_date=datetime.now(),
     )
-    
+
     db.session.merge(new_comment)
+    db.session.commit()
+    return "", 204
+
+
+@api.route("/images", methods=["GET"])
+def get_images():
+    """
+    GET all images
+    """
+    images = Image.query.all()
+    if images:
+        return jsonify(images=[image.serialize() for image in images])
+    return jsonify(message="No Comments Found", images=None)
+
+
+@api.route("/images/<int:id>", methods=["GET"])
+def get_image(id):
+    """
+    GET an individual image by id
+    """
+    image = Image.query.filter_by(id=id).first()
+    if image:
+        return jsonify(image=[image.serialize()])
+    return jsonify(message=f"No image with id {id} found", image=None)
+
+
+@api.route("/images", methods=["POST"])
+def new_image():
+    """
+    POST a new image to the database
+    """
+    image_data = request.json
+    new_image = Image(
+        image_link=image_data.get("image_link", None),
+        upload_date=datetime.now(),
+        post_id=image_data.get("post_id", None),
+    )
+    db.session.merge(new_image)
     db.session.commit()
     return "", 204

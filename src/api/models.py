@@ -133,7 +133,7 @@ class Image(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey("post.id"))
 
     post = db.relationship(
-        "Post", uselist=False, backref=db.backref("image", uselist=True)
+        "Post", uselist=False, backref=db.backref("image", uselist=False)
     )
 
     def __repr__(self):
