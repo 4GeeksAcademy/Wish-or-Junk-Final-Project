@@ -49,7 +49,7 @@ def post_posts():
         title=post_data.get("title", "Untitled"),
         body=post_data.get("body", "The pic says it all!"),
         created_date=datetime.now(),
-        image=get_image(post_data.get("image")).id,
+        # image=get_image(post_data.get("image")).id,
     )
     db.session.merge(new_post)
     db.session.commit()
