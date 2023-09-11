@@ -44,12 +44,13 @@ def post_posts():
     POST new post
     """
     post_data = request.json
+    image = Image(image_link=post_data.get("image"))
     new_post = Post(
         author_id=post_data.get("authror_id", 1),
         title=post_data.get("title", "Untitled"),
         body=post_data.get("body", "The pic says it all!"),
         created_date=datetime.now(),
-        # image=get_image(post_data.get("image")).id,
+        image=image
     )
     db.session.merge(new_post)
     db.session.commit()

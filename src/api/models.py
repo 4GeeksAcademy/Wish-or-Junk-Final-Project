@@ -92,7 +92,7 @@ class Post(db.Model):
             "body": self.body,
             "created_date": self.created_date,
             "comments": [comment.serialize() for comment in self.comments],
-            "image": [image.serialize() for image in self.image],
+            "image": self.image.serialize() if self.image else None,
         }
 
 
