@@ -1,5 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { Navbar } from "../component/navbar";
+import { Footer } from "../component/footer";
 import "../../styles/shuffle.css";
 
 export const Shuffle = () => {
@@ -14,18 +16,25 @@ export const Shuffle = () => {
     apodData();
   }, []);
   return (
-    <div className="shuffy d-flex flex-column text-light">
-      <h1 className="display-1">{apod.title}</h1>
-      <h3>{apod.date}</h3>
-      {/* I know this looks bad but hear me out. it works */}
-      {apod.media_type === "image" ? (
-        <img src={apod.url} />
-      ) : (
-        <video className="">
-          <source src={apod.url} />
-        </video>
-      )}
-      <p className="">{apod.explanation}</p>
+    <div className="shuffle container bg-dark bg-gradient text-light">
+      <Navbar />
+      <div className="header">
+        <h1 className="ms-1 display-4">{apod.title}</h1>
+        <h4 className="ml-5">{apod.date}</h4>
+      </div>
+      <div className="body text-center">
+        {apod.media_type === "image" ? (
+          <img src={apod.url} className="img-fluid vx-50" />
+        ) : (
+          <video>
+            <source src={apod.url} />
+          </video>
+        )}
+        <p className="border border-secondary-emphasis rounded-2 px-3 text-start mt-2">
+          {apod.explanation}
+        </p>
+      </div>
+      <Footer />
     </div>
   );
 };
