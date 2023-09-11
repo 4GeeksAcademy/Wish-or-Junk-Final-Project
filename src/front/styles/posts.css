@@ -1,0 +1,31 @@
+.card {
+    border: none;
+    width: 18rem;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: rgb(30, 30, 30);
+}
+
+.card-body {
+    background-color: rgb(30, 30, 30);
+    color: white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.card-img-top {
+    height: 200px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+}
+
+.card-img-top {
+    background-color: black;
+}
+
+p {
+    font-size: small;
+}

@@ -1,0 +1,18 @@
+.modal-content {
+    background-color: rgb(30, 30, 30);
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: auto;
+}
+
+.post-img-top {
+    height: 290px;
+    width: 465px;
+    border-radius: 5px;
+
+}
+
+
