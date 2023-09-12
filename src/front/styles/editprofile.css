@@ -1,0 +1,43 @@
+.profile-pic-2 {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background-color: white;
+    align-content: center;
+    margin-left: 8px;
+    margin-top: 8px;
+
+
+    z-index: 2;
+}
+
+
+.profile-pic-orbit-2 {
+    width: 220px;
+    height: 220px;
+    border-radius: 110px;
+    background-color: none;
+    align-content: center;
+    margin-left: 165px;
+    border: 2px solid rgb(0, 255, 162);
+    margin-top: -20px;
+    /* background-image: linear-gradient(-134deg, #0208b0 0%, #32c30a 100%); */
+
+
+    z-index: 2;
+}
+
+.form-control {
+    background-color: white;
+    border: none;
+}
+
+.mission-statement-2 {
+    color: black;
+    width: 410px;
+    height: 184px;
+    background-color: rgb(216, 216, 216, 100);
+    border-radius: 13px;
+    margin-left: 81.5px;
+}
+
