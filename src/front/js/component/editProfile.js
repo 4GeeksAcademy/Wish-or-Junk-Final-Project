@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Navbar } from "../component/navbar";
 import { Footer } from "../component/footer";
-// import { UploadImages } from "../component/uploadImages";
-// import { ProfileModal } from "../component/profileModal";
 import { Link } from "react-router-dom";
 
-import "../../styles/profile.css";
+import "../../styles/editprofile.css";
 
-export const Profile = () => {
+export const EditProfile = () => {
   return (
     <div>
       <Navbar />
@@ -17,16 +15,15 @@ export const Profile = () => {
           <div className="card-top d-flex">
             <div className="profile-edit-group">
               <p className="profile-heading">Profile</p>
-              {/* <ProfileModal /> */}
-              <Link to="/edit-profile">
+              <Link to="/profile">
                 <a type="button" className="profile-edit">
-                  Edit<i className="fa-regular fa-pen-to-square ms-2"></i>
+                  Save<i className="fa-regular fa-floppy-disk ms-2"></i>
                 </a>
               </Link>
             </div>
-            <div className="profile-pic-group">
-              <div className="profile-pic-orbit">
-                <div className="profile-pic">
+            <div className="profile-pic-group-2">
+              <div className="profile-pic-orbit-2">
+                <div className="profile-pic-2">
                   <i
                     type="button"
                     className="add-pic-icon fa-solid fa-circle-plus fa-2xl"
@@ -38,19 +35,48 @@ export const Profile = () => {
           </div>
           <div className="card-mid d-flex">
             <div className="settings">
-              <p className="settings-title text-wrap">Name</p>
-              <p className="settings-title text-wrap">Email</p>
-              <p className="settings-title text-wrap">Username</p>
-              <p className="settings-title text-wrap">Number of posts</p>
+              <div className="input-group input-group-sm mb-3">
+                <input
+                  type="text"
+                  className="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm "
+                />
+              </div>
+              <div className="input-group input-group-sm mb-3">
+                <input
+                  type="text"
+                  className="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm "
+                />
+              </div>
+              <div className="input-group input-group-sm mb-3">
+                <input
+                  type="text"
+                  className="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm "
+                />
+              </div>
+              <div className="input-group input-group-sm mb-3">
+                <input
+                  type="text"
+                  className="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm "
+                />
+              </div>
             </div>
-            <div className="mission-statement text-wrap px-3 pt-3">
+            <div className="mission-statement-2 text-wrap px-3 pt-3">
               <h5>Mission Statement</h5>
-              <p>
-                I will seek to learn, for learning is the basis for growth and
-                growing is the key to living. I will seek first to understand,
-                for understanding is the key to finding value and value is the
-                basis for respect, decisions and action.
-              </p>
+              <div class="mb-3">
+                <textarea
+                  className="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="4"
+                ></textarea>
+              </div>
             </div>
           </div>
           <div className="social-media d-flex justify-content-end">
