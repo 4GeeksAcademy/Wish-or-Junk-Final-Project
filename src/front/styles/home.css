@@ -32,8 +32,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;  /* take up the full viewport width */
-  height: 100vh; /* take up the full viewport height */
+  width: 100vw;  
+  height: 100vh; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,10 +51,9 @@ body {
 }
 
 .auth-modal-content {
-  width: 80%;  /* take up 80% of its parent's width */
-  max-height: 80%; /* take up a maximum of 80% of its parent's height */
-  overflow-y: auto;  /* Allow scrolling if content is longer than max-height */
-  /* ... other styles ... */
+  width: 80%; 
+  max-height: 80%; 
+  overflow-y: auto;  
 }
 
 
