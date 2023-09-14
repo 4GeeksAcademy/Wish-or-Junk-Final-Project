@@ -7,31 +7,34 @@ export const Navbar = ({ openSignupModal }) => {
 		<nav className="navbar bg-transparent">
 			<div className="container-fluid ms-0">
 				<Link to="/">
-					<span className="navbar-brand ms-1 btn text-white fw-bold project">Wish Or Junk</span>
+					<span className="navbar-brand ms-0 btn fw-bold fs-1 project">
+						<strong className="text-warning text-gradient">Wish</strong> Or{" "}
+						<i className="text-secondary text-gradient">Junk</i>{" "}
+					</span>
 				</Link>
 				<div className="ml-auto">
-				<Link to="/home">
+					<Link to="/">
 						<button className="text-warning btn ">
 							Home
 						</button>
 					</Link>
-				<Link to="/about-us">
+					<Link to="/about-us">
 						<button className="text-warning btn">
 							About Us
 						</button>
 					</Link>
-				<Link to="/posts">
+					<Link to="/posts">
 						<button className="text-warning btn">
 							Posts
 						</button>
 					</Link>
 					<Link to="/shuffle">
-						<button className="text-warning btn"> 
+						<button className="text-warning btn">
 							Shuffle
 						</button>
 					</Link>
 					<button className="btn links" onClick={openSignupModal}>
- 						 Sign Up
+						Sign Up
 					</button>
 
 				</div>
