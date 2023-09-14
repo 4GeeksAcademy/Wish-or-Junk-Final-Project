@@ -17,7 +17,10 @@ export const Login = () => {
     const navigate = useNavigate();
 
     const loginUserRequest = async () => {
-        actions.login({ email, password, navigate });
+        const response = await actions.login({ email, password, navigate });
+        if (response && response.msg) {
+            seterror(response.msg);
+        }
     };
     return (
         <div className="row d-flex justify-content-center align-items-center h-100">
@@ -47,7 +50,7 @@ export const Login = () => {
                                     </div>
                                     {error !== "" && <div>{error}</div>}
                                     <div className="pt-1 mb-4">
-                                        <button className="btn btn-dark btn-lg btn-block" type="button" onClick={loginUserRequest}>Login</button>
+                                        <button className="btn btn-dark btn-lg btn-block" type="submit" onClick={loginUserRequest}>Login</button>
                                     </div>
 
                                     <a className="small text-muted" href="#!">Forgot password?</a>
