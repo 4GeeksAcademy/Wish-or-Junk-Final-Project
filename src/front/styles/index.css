@@ -1,3 +1,7 @@
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
+.skewed {
+  display: inline-block;
+  transform: skew(10deg);
+}
