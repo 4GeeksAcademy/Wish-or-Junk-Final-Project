@@ -43,12 +43,7 @@ export const Landing = () => {
               Explore Here!
             </button>
           </Link>
-          <button
-            className="btn links fw-bold mt-4 ms-2"
-            onClick={openLoginModal}
-          >
-            Log In
-          </button>
+         
           <button
             className="btn links fw-bold mt-4 ms-2"
             onClick={openSignupModal}
