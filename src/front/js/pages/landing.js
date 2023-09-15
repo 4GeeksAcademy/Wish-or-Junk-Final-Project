@@ -25,7 +25,7 @@ export const Landing = () => {
 
   return (
     <div className="main mx-4 mt-5 mb-5 border border-4 rounded-3">
-     <Navbar openSignupModal={openSignupModal} />
+      <Navbar openSignupModal={openSignupModal} />
       <div className="container-fluid mx-3 d-flex overflow-y-auto text-light mission">
         <div className="mt-4 mx-auto">
           <h3 className="mt-2 ms-1 py-2 fs-4">
