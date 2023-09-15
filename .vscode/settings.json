@@ -4,8 +4,22 @@
   "workbench.editorAssociations": {
     "*.md": "vscode.markdown.preview.editor"
   },
+<<<<<<< HEAD
+=======
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+>>>>>>> 18cfff54b0f7872b198a7e5f756c584849c4c7c4
   "[python]": {
     "editor.defaultFormatter": "ms-python.autopep8"
   },
   "python.formatting.provider": "none"
+<<<<<<< HEAD
+=======
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "workbench.editorAssociations": {   
+        "*.md": "vscode.markdown.preview.editor"
+    }
+>>>>>>> 18cfff54b0f7872b198a7e5f756c584849c4c7c4
 }

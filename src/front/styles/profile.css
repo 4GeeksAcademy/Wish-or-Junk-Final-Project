@@ -1,0 +1,115 @@
+
+.profile-body {
+    justify-content: center;
+}
+
+
+
+.profile-card {
+    width: 700px;
+    height: 400px;
+    background-color: rgb(37, 37, 37, 100);
+    margin-top: 150px;
+    margin-bottom: 50px;
+    border-radius: 13px;
+    z-index: 0;
+
+}
+
+.profile-edit-group {
+    margin-left: 20px;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background-color: white;
+    align-content: center;
+    margin-left: 8px;
+    margin-top: 8px;
+
+
+    z-index: 2;
+}
+
+
+.profile-pic-orbit {
+    width: 220px;
+    height: 220px;
+    border-radius: 110px;
+    background-color: none;
+    align-content: center;
+    margin-left: 170px;
+    border: 2px solid rgb(0, 255, 162);
+    margin-top: -20px;
+    /* background-image: linear-gradient(-134deg, #0208b0 0%, #32c30a 100%); */
+
+
+    z-index: 2;
+}
+
+.add-pic-icon {
+    margin-left: 180px;
+    z-index: 5;
+    margin-top: 140px;
+    /* padding: 20px;
+    background-image: white; */
+    background-image: linear-gradient(-134deg, #252525 0%, #252525 100%);
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 22px;
+    padding-bottom: 20px;
+    border-radius: 30px;
+    margin-right: 20px;
+
+}   
+
+.settings {
+    color: white;
+    margin-left: 20px;
+    max-width: 150px;
+}
+
+.settings-title {
+    max-width: 150px;
+}
+
+.profile-heading {
+    color: white;
+    padding-top: 100px;
+    margin-top: 15px;
+}
+
+.mission-statement {
+    color: black;
+    width: 410px;
+    height: auto;
+    background-color: rgb(216, 216, 216, 100);
+    border-radius: 13px;
+    margin-left: 110px;
+}
+
+.card-top {
+    margin-top: -100px;
+}
+
+.card-mid {
+    margin-top: 25px;
+}
+
+.social-media {
+    margin-right: 25px;
+    margin-top: 20px;
+}
+
+.fa-brands {
+    background-image: linear-gradient(-134deg, #3023AE 0%, #C86DD7 100%);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+
+}
+
