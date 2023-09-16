@@ -1,0 +1,50 @@
+
+.about-us-container {
+  font-family: "Space Mono", monospace;
+  background-image: url("https://webbtelescope.org/files/live/sites/webb/files/home/resource-gallery/articles/_images/wt-banner-article-07-mw-panorama.png");
+  background-size: cover;
+  background-repeat: no repeat;
+  background-attachment: fixed;
+  color: #947109;
+
+  padding: 20px;
+}
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 36px;
+}
+section {
+  margin-bottom: 40px;
+}
+h2 {
+  font-size: 30px;
+}
+p {
+  font-size: 18px;
+}
+.team-section {
+  text-align: center;
+}
+img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+footer {
+  text-align: center;
+}
+a {
+  color: #00f;
+}
+.mission-section {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 11px 14px 32px 4px rgba(27, 27, 181, 1);
+}
+.social-media container {
+  padding-bottom: 10px;
+}
+
