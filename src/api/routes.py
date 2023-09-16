@@ -170,6 +170,7 @@ def login():
     email = data.get('email')
     password = data.get('password')
 
+    # if not all([email, password]):
     if not email or not password:
         return jsonify({"msg": "Email and password are required"}), 400
 
@@ -178,4 +179,7 @@ def login():
     if not user or not user.check_password(password):
         return jsonify({"msg": "Incorrect email or password"}), 401
 
-    return jsonify({"msg": "Login successful!"}), 200
+    return jsonify({
+        "msg": "Login successful!",
+        #"token": "Use the create_token function here to make a token."
+    }), 200

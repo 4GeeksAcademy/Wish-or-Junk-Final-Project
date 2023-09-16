@@ -17,7 +17,7 @@ export const Signup = () => {
 
     const { Firstname, lastname, Address, email, Phonenumber, password, password2 } = inputValues;
 
-    const createUserRequest = async () => {
+    const createUserRequest = async (Firstname, lastname, Address, email, Phonenumber, password) => {
         try {
             const response = await fetch("http://localhost:3001/signup", {
                 method: "POST",
@@ -33,19 +33,21 @@ export const Signup = () => {
                     "Content-Type": "application/json",
                 },
             });
-
+    
             const data = await response.json();
-
+    
             if (response.status === 201) {
-
+                alert("User registered successfully!");
             } else {
-
                 console.error(data.msg);
+                alert("Registration failed: " + data.msg);
             }
         } catch (error) {
             console.error("Error registering user:", error);
+            alert("Error during registration. Please try again.");
         }
     };
+    
 
     return (
         <>

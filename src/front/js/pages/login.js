@@ -11,17 +11,33 @@ export const Login = () => {
         password: ""
     });
 
-    const [error,seterror] = useState("");
+    const [error, seterror] = useState("");
 
     const { email, password } = inputValues;
     const navigate = useNavigate();
 
     const loginUserRequest = async () => {
-        const response = await actions.login({ email, password, navigate });
-        if (response && response.msg) {
-            seterror(response.msg);
+        try {
+            const response = await actions.login(email, password);
+            
+            if (!response.ok) { 
+                throw new Error('Network response was not ok'); 
+            }
+    
+            const data = await response.json();
+            
+            if (data && data.msg) {
+                seterror(data.msg);
+            } else {
+                navigate('/');
+            }
+    
+        } catch (error) {
+            console.error("There was a problem with the fetch operation:", error.message);
+            seterror(error.message);
         }
     };
+
     return (
         <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col col-xl-8">
@@ -33,7 +49,7 @@ export const Login = () => {
                         </div>
                         <div className="col-md-6 col-lg-7 d-flex align-items-center">
                             <div className="card-body p-4 p-lg-5 text-black">
-                                <form>
+                                <form onSubmit={loginUserRequest}>
                                     <div className="d-flex align-items-center mb-3 pb-1">
                                         <span className="h2 fw-bold mb-0">Log In</span>
                                     </div>
@@ -41,16 +57,16 @@ export const Login = () => {
 
                                     <div className="form-outline mb-4">
                                         <input type="email" id="form2Example17" className="form-control form-control-lg" name="email" value={email} onChange={handleInputChange} />
-                                        <label className="form-label" >Email address</label>
+                                        <label className="form-label">Email address</label>
                                     </div>
 
                                     <div className="form-outline mb-4">
                                         <input type="password" id="form2Example27" className="form-control form-control-lg" name="password" value={password} onChange={handleInputChange} />
-                                        <label className="form-label" >Password</label>
+                                        <label className="form-label">Password</label>
                                     </div>
                                     {error !== "" && <div>{error}</div>}
                                     <div className="pt-1 mb-4">
-                                        <button className="btn btn-dark btn-lg btn-block" type="submit" onClick={loginUserRequest}>Login</button>
+                                        <button className="btn btn-dark btn-lg btn-block" type="submit">Login</button>
                                     </div>
 
                                     <a className="small text-muted" href="#!">Forgot password?</a>

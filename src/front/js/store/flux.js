@@ -54,20 +54,26 @@ const getState = ({ getStore, getActions, setStore }) => {
                             password: password
                         }),
                     });
-
-                    if (!resp.ok) {
-                        throw new Error("Failed to login");
-                    }
-
+            
                     const data = await resp.json();
+                    
+                    if (!resp.ok) {
+                        throw new Error(data.msg);
+                    }
+            
                     setStore({
                         user: data.user,
                         token: data.token
                     });
+                    
+                    return resp;
+            
                 } catch (error) {
                     console.log("Error during login:", error);
+                    return error;
                 }
             },
+        
 
             logout: () => {
                 setStore({
@@ -90,7 +96,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                     });
 
                     if (!resp.ok) {
-                        throw new Error("Failed to sign up");
+                        const data = await resp.json();
+                        throw new Error(data.msg);
                     }
 
                     const data = await resp.json();
@@ -100,6 +107,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     });
                 } catch (error) {
                     console.log("Error during signup:", error);
+                    alert(error.message);
                 }
             }
         }
