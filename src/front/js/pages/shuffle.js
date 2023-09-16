@@ -16,9 +16,9 @@ export const Shuffle = () => {
     apodData();
   }, []);
   return (
-    <div className="shuffle container">
+    <div className="container">
       <Navbar />
-      <div className="card bg-dark text-white mx-3">
+      <div className="card shuffle bg-dark text-white mx-3">
         <div className="card-header">
           <h1 className="mt-2 mb-0 display-4">{apod.title}</h1>
           <h4 className="mb-2 text-end">{apod.date}</h4>
