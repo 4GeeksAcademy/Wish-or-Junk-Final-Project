@@ -56,7 +56,7 @@ export const Landing = () => {
       {isLoginModalOpen && (
         <div className="modal-container">
           <div className="modal-background" onClick={closeModals}></div>
-          <div className="modal-content">
+          <div className="auth-modal-content">
             <Login />
           </div>
         </div>
@@ -64,7 +64,7 @@ export const Landing = () => {
       {isSignupModalOpen && (
         <div className="modal-container">
           <div className="modal-background" onClick={closeModals}></div>
-          <div className="modal-content">
+          <div className="auth-modal-content">
             <Signup />
           </div>
         </div>
