@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Navbar } from "../component/navbar";
+import Navbar from '../component/navbar';
 import { Footer } from "../component/footer";
 import "../../styles/shuffle.css";
 

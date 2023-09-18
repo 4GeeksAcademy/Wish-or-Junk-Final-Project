@@ -1,3 +1,5 @@
+import { signup, login, logout, useAuth } from "../../firebase.js";
+
 const getState = ({ getStore, getActions, setStore }) => {
     return {
         store: {
@@ -44,72 +46,50 @@ const getState = ({ getStore, getActions, setStore }) => {
 
             login: async (email, password) => {
                 try {
-                    const resp = await fetch(process.env.BACKEND_URL + "/api/login", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify({
-                            email: email,
-                            password: password
-                        }),
-                    });
-            
-                    const data = await resp.json();
-                    
-                    if (!resp.ok) {
-                        throw new Error(data.msg);
-                    }
-            
+                    await login(email, password); // From Firebase logic
+                    const user = useAuth(); // get the currently logged in user
                     setStore({
-                        user: data.user,
-                        token: data.token
+                        user: user,
+                        token: user ? user.uid : null // using the user UID as a token for simplicity
                     });
+                    return true; // or any other success indication
                     
-                    return resp;
-            
                 } catch (error) {
                     console.log("Error during login:", error);
                     return error;
                 }
             },
-        
 
-            logout: () => {
-                setStore({
-                    user: null,
-                    token: null
-                });
+            logout: async () => {
+                try {
+                    await logout(); // From Firebase logic
+                    setStore({
+                        user: null,
+                        token: null
+                    });
+                    return true; // or any other success indication
+                    
+                } catch (error) {
+                    console.log("Error during logout:", error);
+                    return error;
+                }
             },
 
             signup: async (email, password) => {
                 try {
-                    const resp = await fetch(process.env.BACKEND_URL + "/api/signup", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify({
-                            email: email,
-                            password: password
-                        }),
-                    });
-
-                    if (!resp.ok) {
-                        const data = await resp.json();
-                        throw new Error(data.msg);
-                    }
-
-                    const data = await resp.json();
+                    await signup(email, password); // From Firebase logic
+                    const user = useAuth(); // get the currently logged in user
                     setStore({
-                        user: data.user,
-                        token: data.token
+                        user: user,
+                        token: user ? user.uid : null // using the user UID as a token for simplicity
                     });
+                    return true; // or any other success indication
+                    
                 } catch (error) {
                     console.log("Error during signup:", error);
-                    alert(error.message);
+                    return error;
                 }
-            }
+            },
         }
     };
 };
