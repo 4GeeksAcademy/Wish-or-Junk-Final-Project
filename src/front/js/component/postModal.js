@@ -22,8 +22,8 @@ export const PostModal = () => {
                             <h1 className="modal-title fs-5" id="exampleModalLabel">New Post</h1>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div className="modal-body">
-                            <form>
+                        <form>
+                            <div className="modal-body">
                                 <div className="mb-3">
                                     <img
                                         src={picURL}
@@ -36,20 +36,20 @@ export const PostModal = () => {
                                     <label for="message-text" className="col-form-label">Message:</label>
                                     <textarea className="form-control" id="message-text" rows="5"></textarea>
                                 </div>
-                            </form>
-                        </div>
-                        <div className="modal-footer d-flex justify-content-between">
-                            <div>
-                                <input className="d-none" type="file" />
-                                {/* <UploadImages /> */}
-                                <a type="button"><i className="fa-solid fa-upload fa-lg p-2" style={{ color: "#0063D7", }}></i></a>
-                                <a type="button"><i className="fa-solid fa-camera fa-xl" style={{ color: "#0063D7", }}></i></a>
                             </div>
-                            <div>
-                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" className="btn btn-warning ms-2">Submit Post</button>
+                            <div className="modal-footer d-flex justify-content-between">
+                                <div>
+                                    <input className="d-none" type="file" />
+                                    {/* <UploadImages /> */}
+                                    <a type="button"><i className="fa-solid fa-upload fa-lg p-2" style={{ color: "#0063D7", }}></i></a>
+                                    <a type="button"><i className="fa-solid fa-camera fa-xl" style={{ color: "#0063D7", }}></i></a>
+                                </div>
+                                <div>
+                                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" className="btn btn-warning ms-2">Submit Post</button>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
