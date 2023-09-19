@@ -1,0 +1,15 @@
+.map {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Comet_Hale-Bopp_1995O1.jpg/1024px-Comet_Hale-Bopp_1995O1.jpg");
+  background-size: no-repeat !important;
+  height: 100vh;
+  width: 100%;
+  padding-top: 15%;
+  align-items: center;
+}
+body > .map {
+  background-image: none;
+}
+.btn {
+  width: 15rem;
+  text-decoration: none;
+}

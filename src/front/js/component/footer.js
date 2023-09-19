@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 export const Footer = () => (
@@ -10,5 +10,10 @@ export const Footer = () => (
         <button className="btn text-warning gradient mb-1">The Wish Or Junk Team</button>
       </Link>
     </p>
+    <a>
+      <Link to='/sitemap'>
+        Sitemap
+      </Link>
+    </a>
   </footer>
 );
