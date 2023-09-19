@@ -8,7 +8,7 @@ export const Shuffle = () => {
   const [apod, setApod] = useState({});
   useEffect(() => {
     async function apodData() {
-      const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.APOD_KEY}`;
+      const url = `https://api.nasa.gov/planetary/apod?api_key=7Gco7wvuQfxdIQsC9O0UBxM1vJRgK7QZChtlaKoz`;
       const response = await fetch(url, { method: "GET" });
       const data = await response.json();
       setApod(data);
@@ -20,13 +20,13 @@ export const Shuffle = () => {
       <Navbar />
       <div className="card shuffle bg-dark text-white mx-3">
         <div className="card-header">
-          <h1 className="mt-2 mb-0 display-4">{apod.title}</h1>
-          <h4 className="mb-2 text-end">{apod.date}</h4>
+          <h1 className="mt-2 mb-0 ps-2 display-4">{apod.title}</h1>
+          <h4 className="mb-2 pe-2 text-end">{apod.date}</h4>
         </div>
         <div className="card-body">
           <div className="body text-center">
             {apod.media_type === "image" ? (
-              <img src={apod.url} className="img-fluid vx-50 rounded-2" />
+              <img src={apod.url} className="img-fluid rounded-2" />
             ) : (
               <video>
                 <source src={apod.url} />

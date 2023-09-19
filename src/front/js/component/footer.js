@@ -10,10 +10,8 @@ export const Footer = () => (
         <button className="btn text-warning gradient mb-1">The Wish Or Junk Team</button>
       </Link>
     </p>
-    <a>
-      <Link to='/sitemap'>
-        Sitemap
-      </Link>
-    </a>
+    <Link to='/sitemap'>
+      Sitemap
+    </Link>
   </footer>
 );
