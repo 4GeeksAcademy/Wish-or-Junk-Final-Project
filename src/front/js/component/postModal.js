@@ -3,6 +3,7 @@ import { UploadImages } from "./uploadImages";
 import "../../styles/postmodal.css";
 
 
+
 export const PostModal = () => {
 
     const picURL = "https://star-name-registry.com/blog/images/d/0/1/f/a/d01faec7ef04415eec34c1bfe61913e167fb26c7-snr-blog-37-resized.jpg";
@@ -22,7 +23,7 @@ export const PostModal = () => {
                             <h1 className="modal-title fs-5" id="exampleModalLabel">New Post</h1>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form>
+                        <form action={`${process.env.BACKEND_URL}api/posts/`} method="POST">
                             <div className="modal-body">
                                 <div className="mb-3">
                                     <img
