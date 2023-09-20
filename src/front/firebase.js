@@ -1,5 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { sendPasswordResetEmail } from "firebase/auth";
 import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -28,6 +30,9 @@ export function login(email, password) {
 }
 export function logout() {
     return signOut(auth);
+}
+export function resetPassword(email) {
+    return sendPasswordResetEmail(auth, email);
 }
 //Custom hook
 export function useAuth() {
