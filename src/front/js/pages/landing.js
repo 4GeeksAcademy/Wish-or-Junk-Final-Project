@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navbar } from '../component/navbar';
+import Navbar from '../component/navbar';
 import { Footer } from '../component/footer';
 import { Link } from 'react-router-dom';
 import { Login } from '../pages/login';
@@ -25,7 +25,7 @@ export const Landing = () => {
 
   return (
     <div className="main mx-4 mt-5 mb-5 border border-4 rounded-3">
-      <Navbar openSignupModal={openSignupModal} />
+      <Navbar openSignupModal={openSignupModal} openLoginModal={openLoginModal} />
       <div className="container-fluid mx-3 d-flex overflow-y-auto text-light mission">
         <div className="mt-4 mx-auto">
           <h3 className="mt-2 ms-1 py-2 fs-4">
@@ -56,7 +56,7 @@ export const Landing = () => {
       {isLoginModalOpen && (
         <div className="modal-container">
           <div className="modal-background" onClick={closeModals}></div>
-          <div className="modal-content">
+          <div className="auth-modal-content">
             <Login />
           </div>
         </div>
@@ -64,7 +64,7 @@ export const Landing = () => {
       {isSignupModalOpen && (
         <div className="modal-container">
           <div className="modal-background" onClick={closeModals}></div>
-          <div className="modal-content">
+          <div className="auth-modal-content">
             <Signup />
           </div>
         </div>

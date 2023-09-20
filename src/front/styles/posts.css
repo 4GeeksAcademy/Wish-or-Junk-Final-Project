@@ -1,31 +1,26 @@
-.card {
+.post .card {
     border: none;
-    width: 18rem;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-radius: 15px;
     background-color: rgb(30, 30, 30);
 }
 
-.card-body {
+.post .card-body {
     background-color: rgb(30, 30, 30);
     color: white;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
 
-.card-img-top {
+.post .card-img-top {
     height: 200px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-
 }
 
-.card-img-top {
+.post .card-img-top {
     background-color: black;
 }
 
-p {
+.post p {
     font-size: small;
 }
