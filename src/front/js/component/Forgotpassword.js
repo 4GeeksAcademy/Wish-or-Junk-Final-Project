@@ -16,7 +16,7 @@ const ForgotPassword = ({ onClose, email: initialEmail }) => {
         try {
             await resetPassword(email);
             alert("Email Sent")
-            setMessage("Email Sent");
+            setMessage("");
             reset();
         } catch (error) {
             setError("Failed to reset password.");
