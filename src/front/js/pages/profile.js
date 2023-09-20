@@ -1,38 +1,47 @@
 import React, { useState, useEffect } from "react";
 import { Navbar } from "../component/navbar";
 import { Footer } from "../component/footer";
-// import { UploadImages } from "../component/uploadImages";
-// import { ProfileModal } from "../component/profileModal";
 import { Link } from "react-router-dom";
+import { useAuth, upload } from "../../../../src/firebase.js";
+import { BucketTest } from "../component/bucketTest";
+
 
 import "../../styles/profile.css";
 
 export const Profile = () => {
+  const currentUser = useAuth();
+  const [photoURL, setPhotoURL] = useState("https://achievebh.org/wp-content/uploads/2023/02/avatar_placeholder.png");
+  
+  useEffect(() => {
+    if(currentUser?.photoURL) {
+       setPhotoURL(currentUser.photoURL);
+    }
+   
+  }, [currentUser])
+  
   return (
     <div>
       <Navbar />
-      {/* <UploadImages /> */}
+      <BucketTest />
       <div className="profile-body d-flex justify-content-center">
         <div className="profile-card">
           <div className="card-top d-flex">
             <div className="profile-edit-group">
               <p className="profile-heading">Profile</p>
-              {/* <ProfileModal /> */}
               <Link to="/edit-profile">
-                <a type="button" className="profile-edit">
+                <span type="button" className="profile-edit">
                   Edit<i className="fa-regular fa-pen-to-square ms-2"></i>
-                </a>
+                </span>
               </Link>
             </div>
             <div className="profile-pic-group">
               <div className="profile-pic-orbit">
-                <div className="profile-pic">
-                  <i
+              <img src={photoURL} alt="Avatar" className="profile-pic" />
+                  {/* <i
                     type="button"
                     className="add-pic-icon fa-solid fa-circle-plus fa-2xl"
                     style={{ color: "blue" }}
-                  ></i>
-                </div>
+                  ></i>  */}
               </div>
             </div>
           </div>
@@ -40,8 +49,6 @@ export const Profile = () => {
             <div className="settings">
               <p className="settings-title text-wrap">Name</p>
               <p className="settings-title text-wrap">Email</p>
-              <p className="settings-title text-wrap">Username</p>
-              <p className="settings-title text-wrap">Number of posts</p>
             </div>
             <div className="mission-statement text-wrap px-3 pt-3">
               <h5>Mission Statement</h5>
@@ -81,3 +88,6 @@ export const Profile = () => {
     </div>
   );
 };
+
+
+//RMB

@@ -7,7 +7,7 @@
 
 .profile-card {
     width: 700px;
-    height: 400px;
+    height: 380px;
     background-color: rgb(37, 37, 37, 100);
     margin-top: 150px;
     margin-bottom: 50px;
@@ -40,7 +40,7 @@
     border-radius: 110px;
     background-color: none;
     align-content: center;
-    margin-left: 170px;
+    margin-left: 161px;
     border: 2px solid rgb(0, 255, 162);
     margin-top: -20px;
     /* background-image: linear-gradient(-134deg, #0208b0 0%, #32c30a 100%); */
@@ -50,9 +50,10 @@
 }
 
 .add-pic-icon {
+    
     margin-left: 180px;
     z-index: 5;
-    margin-top: 140px;
+    margin-top: -200px;
     /* padding: 20px;
     background-image: white; */
     background-image: linear-gradient(-134deg, #252525 0%, #252525 100%);
@@ -67,7 +68,7 @@
 
 .settings {
     color: white;
-    margin-left: 20px;
+    margin-left: 30px;
     max-width: 150px;
 }
 
@@ -87,7 +88,7 @@
     height: auto;
     background-color: rgb(216, 216, 216, 100);
     border-radius: 13px;
-    margin-left: 110px;
+    margin-left: 100px;
 }
 
 .card-top {
@@ -99,8 +100,10 @@
 }
 
 .social-media {
-    margin-right: 25px;
+    margin-right: 0px;
+    margin-left: 300px;
     margin-top: 20px;
+    width: 375px;
 }
 
 .fa-brands {
@@ -111,5 +114,9 @@
     padding-bottom: 20px;
     border-radius: 5px;
 
+}
+
+.settings-title {
+    width: 120px;
 }
 

@@ -35,4 +35,4 @@ export const Navbar = ({ openSignupModal, openLoginModal }) => {
       </div>
     </nav>
   );
-
+}

@@ -1,4 +1,29 @@
+
+.edit-profile-card {
+    width: 700px;
+    height: 450px;
+    background-color: rgb(37, 37, 37, 100);
+    margin-top: 150px;
+    margin-bottom: 50px;
+    border-radius: 13px;
+    z-index: 0;
+
+}
+
+
 .profile-pic-2 {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background-color: white;
+    align-content: center;
+    margin-left: 8px;
+    margin-top: 8px;
+
+
+    z-index: 2;
+}
+.avatar {
     width: 200px;
     height: 200px;
     border-radius: 100px;
@@ -30,6 +55,7 @@
 .form-control {
     background-color: white;
     border: none;
+    margin-bottom: 2.5px;
 }
 
 .mission-statement-2 {
@@ -38,6 +64,27 @@
     height: 184px;
     background-color: rgb(216, 216, 216, 100);
     border-radius: 13px;
-    margin-left: 81.5px;
+    margin-left: 75px;
 }
 
+.social-media-2 {
+    margin-right: 0px;
+    margin-left: 220px;
+    margin-top: 20px;
+    width: 375px;
+}
+
+.file-upload {
+    margin-left: 105px;
+}
+
+.mission-social {
+    width: 500px;
+    margin-top: 50px;
+    
+}
+
+.input_style {
+    margin-top: 73px;
+
+}
