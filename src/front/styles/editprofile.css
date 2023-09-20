@@ -85,6 +85,8 @@
 }
 
 .input_style {
-    margin-top: 73px;
+    margin-top: 75px;
+    margin-left: 5px;
+    position: relative;
 
 }

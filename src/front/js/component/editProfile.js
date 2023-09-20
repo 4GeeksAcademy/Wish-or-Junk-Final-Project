@@ -78,8 +78,6 @@ export const EditProfile = props => {
                   aria-describedby="inputGroup-sizing-sm "
                   placeholder="Name"
                 />
-              
-              
                 <input
                   type="text"
                   id="e-email"
