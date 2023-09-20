@@ -27,7 +27,9 @@ const Navbar = ({ openSignupModal, openLoginModal }) => {
                 </Link>
                 <div className="ml-auto">
                     <Link to="/">
-                        <button className="text-warning btn">Home</button>
+
+                        <button className="text-warning btn ">Home</button>
+
                     </Link>
                     <Link to="/about-us">
                         <button className="text-warning btn">About Us</button>
@@ -39,9 +41,13 @@ const Navbar = ({ openSignupModal, openLoginModal }) => {
                         <button className="text-warning btn">Shuffle</button>
                     </Link>
                     {currentUser ? (
-                        <button className="btn links fw-bold me-2" onClick={handleLogout}>
-                            Logout
-                        </button>
+                        <>
+                            <strong className="me-3 text-white fw-bold">{currentUser.email}</strong>
+                            <button className="btn links fw-bold me-2" onClick={handleLogout}>
+                                Logout
+                            </button>
+                        </>
+
                     ) : (
                         <>
                             <button className="btn links fw-bold me-2" onClick={openLoginModal}>
