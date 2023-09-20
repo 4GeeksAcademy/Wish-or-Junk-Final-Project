@@ -122,7 +122,7 @@ body {
 .form-label, 
 .form-control::placeholder {
   font-weight: bold;
-    color: #060606; 
+    color: #1b08ea; 
 }
 
 .form-control {
@@ -135,4 +135,30 @@ body {
 .vh-100 > *, .container > *, .row > *, .col-lg-12 > *, .card > * {
   margin: 0;
   padding: 0;
+}
+.row.d-flex.justify-content-center.align-items-center.h-100 {
+  position: relative;
+}
+
+.forgot-password-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.forgot-password-modal {
+  width: auto;
+  max-width: 400px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
 }
