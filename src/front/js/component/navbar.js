@@ -27,7 +27,9 @@ const Navbar = ({ openSignupModal, openLoginModal }) => {
                 </Link>
                 <div className="ml-auto">
                     <Link to="/">
+
                         <button className="text-warning btn ">Home</button>
+
                     </Link>
                     <Link to="/about-us">
                         <button className="text-warning btn">About Us</button>
@@ -45,6 +47,7 @@ const Navbar = ({ openSignupModal, openLoginModal }) => {
                                 Logout
                             </button>
                         </>
+
                     ) : (
                         <>
                             <button className="btn links fw-bold me-2" onClick={openLoginModal}>
