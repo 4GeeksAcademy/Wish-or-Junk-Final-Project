@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
-
-
 import "../../styles/posts.css";
 
 export const PostCard = () => {
@@ -12,7 +9,7 @@ export const PostCard = () => {
     return (
         <div className="post">
             <div className="">
-                <div className="card">
+                <div className="post-card">
                     <img
                         src={picURL}
                         className="card-img-top"

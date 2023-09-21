@@ -1,4 +1,10 @@
 
+.edit-profile-body {
+    margin-top: 50px;
+}
+
+
+
 .edit-profile-card {
     width: 700px;
     height: 450px;
@@ -76,6 +82,7 @@
 
 .file-upload {
     margin-left: 105px;
+    margin-top: 40px;
 }
 
 .mission-social {
@@ -85,7 +92,7 @@
 }
 
 .input_style {
-    margin-top: 75px;
+    margin-top: 0px;
     margin-left: 5px;
     position: relative;
 

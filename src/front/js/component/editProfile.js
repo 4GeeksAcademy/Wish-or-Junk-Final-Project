@@ -3,8 +3,8 @@ import Navbar from '../component/navbar';
 import { Footer } from "../component/footer";
 import { Link } from "react-router-dom";
 import { ProfilePicUpload } from "../component/profilePicUpload";
-import { BucketTest } from "./bucketTest";
-import { useAuth, upload } from  "../../firebase.js";
+// import { BucketTest } from "./bucketTest";
+import { useAuth, upload } from "../../firebase.js";
 import "../../styles/editprofile.css";
 
 // import { Survey } from "./survey";
@@ -12,7 +12,7 @@ import "../../styles/editprofile.css";
 
 export const EditProfile = props => {
   const currentUser = useAuth();
-  const [photoURL, setPhotoURL] = useState("https://theinfiniteexperience.world/files/common/Sans-titre-9.png");
+  const [photoURL, setPhotoURL] = useState("https://achievebh.org/wp-content/uploads/2023/02/avatar_placeholder.png");
   const saveAnswer = (e) => {
     e.preventDefault();
 
@@ -26,7 +26,7 @@ export const EditProfile = props => {
 
       return accumulator;
     }, {});
-  
+
     db.collection("profiledata").add(formData);
   };
 
@@ -40,9 +40,9 @@ export const EditProfile = props => {
   return (
     <div>
       <Navbar />
-      <BucketTest />
+      {/* <BucketTest /> */}
 
-      <div className="profile-body d-flex justify-content-center">
+      <div className="edit-profile-body d-flex justify-content-center">
         <div className="edit-profile-card">
           <div className="card-top d-flex">
             <div className="profile-edit-group">
@@ -69,58 +69,58 @@ export const EditProfile = props => {
           </div>
           <div className="card-mid d-flex">
             <form className="settings" onSubmit={saveAnswer}>
-              
-                <input
-                  type="text"
-                  id="Name"
-                  className="form-control"
-                  aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-sm "
-                  placeholder="Name"
-                />
-                <input
-                  type="text"
-                  id="e-email"
-                  className="form-control"
-                  aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-sm "
-                  placeholder="e-mail"
-                />
-              
+
+              <input
+                type="text"
+                id="Name"
+                className="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm "
+                placeholder="Name"
+              />
+              <input
+                type="text"
+                id="e-email"
+                className="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm "
+                placeholder="e-mail"
+              />
+
               {/* social media handles */}
-                <input
-                  type="text"
-                  id="facebook"
-                  className="form-control"
-                  aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-sm "
-                  placeholder="instagram"
-                />
-                <input
-                  type="text"
-                  id="instagram"
-                  className="form-control"
-                  aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-sm "
-                  placeholder="twitter"
-                />
-                <input
-                  type="text"
-                  id="linkedin"
-                  className="form-control"
-                  aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-sm "
-                  placeholder="facebook"
-                />
-                <input
-                  type="text"
-                  id="twitter"
-                  className="form-control"
-                  aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-sm "
-                  placeholder="linkedin"
-                />
-                
+              <input
+                type="text"
+                id="facebook"
+                className="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm "
+                placeholder="instagram"
+              />
+              <input
+                type="text"
+                id="instagram"
+                className="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm "
+                placeholder="twitter"
+              />
+              <input
+                type="text"
+                id="linkedin"
+                className="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm "
+                placeholder="facebook"
+              />
+              <input
+                type="text"
+                id="twitter"
+                className="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm "
+                placeholder="linkedin"
+              />
+
               <button>Submit</button>
             </form>
             <div className="mission-social d-flex flex-column mb-3 justify-content-center">
@@ -134,7 +134,7 @@ export const EditProfile = props => {
                   ></textarea>
                 </div>
               </div>
-{/* social media icon buttons */}
+              {/* social media icon buttons */}
               <div className="social-media-2 d-flex">
                 <a type="button" href="https://www.instagram.com/" className="btn">
                   <i className="fa-brands fa-instagram fa-xl" />
