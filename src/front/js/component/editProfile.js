@@ -4,7 +4,7 @@ import { Footer } from "../component/footer";
 import { Link } from "react-router-dom";
 import { ProfilePicUpload } from "../component/profilePicUpload";
 import { BucketTest } from "./bucketTest";
-import { useAuth, upload } from "../../../../src/firebase.js";
+import { useAuth, upload } from  "../../firebase.js";
 import "../../styles/editprofile.css";
 
 // import { Survey } from "./survey";

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import "../../styles/buckettest.css";
-import { signup, login, logout, useAuth } from "../../../../src/firebase.js";
+import { signup, login, logout, useAuth } from  "../../firebase.js";
 
 export const BucketTest = () => {
     const [loading, setLoading] = useState(false);

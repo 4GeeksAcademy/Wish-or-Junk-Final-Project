@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useAuth, upload } from "../../../../src/firebase.js";
+import { useAuth, upload }  from  "../../firebase.js";
 import { currentUser } from "firebase/auth";
 
 import "../../styles/profileupload.css";

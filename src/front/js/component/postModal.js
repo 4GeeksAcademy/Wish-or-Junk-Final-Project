@@ -2,22 +2,18 @@ import React from "react";
 import { useState } from 'react';
 import "../../styles/postmodal.css";
 
-
-
 export const PostModal = () => {
     const [newPost, setNewPost] = useState(" ")
     const [posts, setPosts] = useState([]) //empty array for posts
 
     const handleSubmit = (e) => {
-        //page will stop refreshing
         e.preventDefault()
         setPosts([...posts, { id: crypto.randomUUID(), title: newPost, completed: false }])
-
-        //resets input field
         setNewPost("")
     }
 
     const picURL = "https://star-name-registry.com/blog/images/d/0/1/f/a/d01faec7ef04415eec34c1bfe61913e167fb26c7-snr-blog-37-resized.jpg";
+    
     return (
         <div className="container d-flex justify-content-center col-6">
             <button type="button" className="btn btn-warning d-grid col-6"
@@ -44,7 +40,7 @@ export const PostModal = () => {
                                     />
                                 </div>
                                 <div className="mb-3">
-                                    <label form="message-text" className="col-form-label">Message:</label>
+                                    <label htmlFor="message-text" className="col-form-label">Message:</label>
                                     <textarea
                                         value={newPost}
                                         onChange={e => setNewPost(e.target.value)}
@@ -62,23 +58,14 @@ export const PostModal = () => {
                                 <a type="button"><i className="fa-solid fa-upload fa-lg p-2" style={{ color: "#0063D7", }}></i></a>
                                 <a type="button"><i className="fa-solid fa-camera fa-xl" style={{ color: "#0063D7", }}></i></a>
                             </div>
-                            <div className="modal-footer d-flex justify-content-between">
-                                <div>
-                                    <input className="d-none" type="file" />
-                                    {/* <UploadImages /> */}
-                                    <a type="button"><i className="fa-solid fa-upload fa-lg p-2" style={{ color: "#0063D7", }}></i></a>
-                                    <a type="button"><i className="fa-solid fa-camera fa-xl" style={{ color: "#0063D7", }}></i></a>
-                                </div>
-                                <div>
-                                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" className="btn btn-warning ms-2">Submit Post</button>
-                                </div>
+                            <div>
+                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" className="btn btn-warning ms-2">Submit Post</button>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     );
 };
-
-// RMB
