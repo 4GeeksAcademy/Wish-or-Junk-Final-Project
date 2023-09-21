@@ -3,6 +3,7 @@ import { useState } from 'react';
 import "../../styles/postmodal.css";
 
 
+
 export const PostModal = () => {
     const [newPost, setNewPost] = useState(" ")
     const [posts, setPosts] = useState([]) //empty array for posts
@@ -26,11 +27,12 @@ export const PostModal = () => {
             <div className="modal fade" id="exampleModal" tabIndex="-1"
                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
-                    <div className="modal-content">
+                    <div className="post-modal-content modal-content">
                         <div className="modal-header">
                             <h1 className="modal-title fs-5" id="exampleModalLabel">New Post</h1>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
+
                         <div className="modal-body">
                             <form className="post-form" onSubmit={handleSubmit} >
                                 <div className="mb-3">
@@ -60,11 +62,18 @@ export const PostModal = () => {
                                 <a type="button"><i className="fa-solid fa-upload fa-lg p-2" style={{ color: "#0063D7", }}></i></a>
                                 <a type="button"><i className="fa-solid fa-camera fa-xl" style={{ color: "#0063D7", }}></i></a>
                             </div>
-                            <div>
-                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" className="btn btn-warning ms-2">Submit Post</button>
+                            <div className="modal-footer d-flex justify-content-between">
+                                <div>
+                                    <input className="d-none" type="file" />
+                                    {/* <UploadImages /> */}
+                                    <a type="button"><i className="fa-solid fa-upload fa-lg p-2" style={{ color: "#0063D7", }}></i></a>
+                                    <a type="button"><i className="fa-solid fa-camera fa-xl" style={{ color: "#0063D7", }}></i></a>
+                                </div>
+                                <div>
+                                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" className="btn btn-warning ms-2">Submit Post</button>
+                                </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Navbar } from "../component/navbar";
+import Navbar from '../component/navbar';
 import { Footer } from "../component/footer";
 import { PostCard } from "../component/postCard";
 import { PostModal } from "../component/postModal";
