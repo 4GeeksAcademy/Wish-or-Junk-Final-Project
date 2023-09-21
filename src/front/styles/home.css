@@ -132,10 +132,14 @@ body {
 }
 
 
+/* COMMENTING OUT TO FIX BUG ON POST CARDS
+
 .vh-100 > *, .container > *, .row > *, .col-lg-12 > *, .card > * {
   margin: 0;
   padding: 0;
-}
+} */
+
+
 .row.d-flex.justify-content-center.align-items-center.h-100 {
   position: relative;
 }

@@ -28,11 +28,12 @@ p {
 .team-section {
   text-align: center;
 }
-img {
+.team-member img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
 }
+
 footer {
   text-align: center;
 }
