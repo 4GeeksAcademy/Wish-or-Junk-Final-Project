@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+
 import "../../styles/posts.css";
 
 export const PostCard = () => {
+
     const picURL = "https://apod.nasa.gov/apod/image/1106/NGC3372_gendlerhannahoe.jpg";
 
     return (
         <div className="post">
-
             <div className="row row-cols-1 row-cols-md-2 g-4">
                 <div className="col">
                     <div className="card">
@@ -31,3 +31,8 @@ export const PostCard = () => {
         </div>
     );
 };
+// RMB
+
+
+
+

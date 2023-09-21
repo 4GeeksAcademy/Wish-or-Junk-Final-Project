@@ -4,7 +4,6 @@ import { Footer } from "../component/footer";
 import { PostCard } from "../component/postCard";
 import { PostModal } from "../component/postModal";
 
-import { Link } from "react-router-dom";
 
 
 import "../../styles/posts.css";
@@ -29,3 +28,5 @@ export const PostSlide = () => {
         </div>
     );
 };
+
+//RMB
