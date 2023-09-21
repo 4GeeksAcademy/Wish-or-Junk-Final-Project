@@ -1,0 +1,16 @@
+/* below code hides choose file button */
+.hide_file {
+    z-index: 1000;
+    opacity: 0;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    height: 50px;
+    font-size: 24px;
+    width: 50px;
+    border: 1px green solid;
+    
+}
+
+
+

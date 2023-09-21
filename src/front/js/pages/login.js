@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useform";
 import { login, useAuth } from "../../firebase.js";
+import ForgotPassword from '../component/Forgotpassword.js';
 
 export const Login = ({ closeModal }) => {
     const [inputValues, handleInputChange] = useForm({
@@ -10,23 +11,26 @@ export const Login = ({ closeModal }) => {
     });
 
     const [error, setError] = useState("");
+    const [showForgotPassword, setShowForgotPassword] = useState(false);
 
     const { email, password } = inputValues;
     const navigate = useNavigate();
-    const currentUser = useAuth(); 
+    const currentUser = useAuth();
 
     const loginUserRequest = async (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
         try {
-            await login(email, password); 
-            closeModal(); 
+            await login(email, password);
+            closeModal();
             navigate('/');
         } catch (error) {
-            console.error("There was a problem with the login operation:", error.message);
             setError(error.message);
         }
     };
 
+    const handleForgotPassword = () => {
+        setShowForgotPassword(true);
+    };
     return (
         <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col col-xl-8">
@@ -63,7 +67,7 @@ export const Login = ({ closeModal }) => {
                                         <div className="pt-1 mb-4">
                                             <button className="btn btn-dark btn-lg btn-block" type="submit">Login</button>
                                         </div>
-                                        <a className="small text-muted" href="#!">Forgot password?</a>
+                                        <a className="small text-muted" href="#!" onClick={handleForgotPassword}>Forgot password?</a>
                                         <p className="mb-5 pb-lg-2" style={{ color: "#393f81" }}>Don't have an account?
                                             <Link style={{ color: "#393f81" }} to="/signup">
                                                 Register here
@@ -76,6 +80,15 @@ export const Login = ({ closeModal }) => {
                     </div>
                 </div>
             </div>
+            {showForgotPassword && (
+                <div className="forgot-password-modal-overlay">
+                    <ForgotPassword
+                        onClose={() => setShowForgotPassword(false)}
+                        email={email}
+
+                    />
+                </div>
+            )}
         </div>
     );
 };

@@ -17,7 +17,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                 }
             ],
             user: null,
-            token: null
+            token: null,
+            favorites: []
         },
         actions: {
             exampleFunction: () => {
@@ -34,6 +35,24 @@ const getState = ({ getStore, getActions, setStore }) => {
                     console.log("Error loading message from backend", error);
                 }
             },
+              addFavorite: (name, type, id) => {
+				const store = getStore();
+				if (store.favorites.filter((item) => item.name === name).length === 0) {
+					const newObj = {
+						name: name,
+						type: type,
+						id: id
+					}
+					const newArr = [...store.favorites, newObj]
+					setStore({favorites: newArr})
+				} else console.log("Hmm... seen that before")
+			},
+			//function to remove favorite
+			removeFavorite: (obj) => {
+				const store = getStore();
+				const newArr = store.favorites.filter((item) => item.name != obj.name)
+				setStore({favorites: newArr})
+			},
 
             changeColor: (index, color) => {
                 const store = getStore();

@@ -1,0 +1,31 @@
+.avatar {
+    margin-left: 250px;
+}
+
+.choose-file-button {
+    border-radius: 50px;
+
+}
+
+#file-upload-button {
+    border-radius: 50px;
+}
+
+/* .hide_file {
+    z-index: 1000;
+    opacity: 1;
+    cursor: pointer;
+    margin-right: 30px;
+    margin-left: 80px;
+    margin-bottom: 100px;
+    top: 0;
+    height: 30px;
+    font-size: 0px;
+    width: 30px;
+    border: 1px purple solid;
+    border-radius: 50px;
+    background-color: purple;
+    padding: 5px;
+    
+} */
+
