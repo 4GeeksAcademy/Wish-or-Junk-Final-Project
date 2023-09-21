@@ -24,9 +24,9 @@ export const Landing = () => {
   };
 
   return (
-    <div className="main mx-4 mt-5 mb-5 border border-4 rounded-3">
+    <div className="">
       <Navbar openSignupModal={openSignupModal} openLoginModal={openLoginModal} />
-      <div className="container-fluid mx-3 d-flex overflow-y-auto text-light mission">
+      <div className="container-fluid mx-3 d-flex overflow-y-auto text-light mission main mx-4 mt-5 mb-5 border border-4 rounded-3">
         <div className="mt-4 mx-auto">
           <h3 className="mt-2 ms-1 py-2 fs-4">
             THINK YOU WITNESSED A SHOOTING STAR?
@@ -43,7 +43,7 @@ export const Landing = () => {
               Explore Here!
             </button>
           </Link>
-         
+
           <button
             className="btn links fw-bold mt-4 ms-2"
             onClick={openSignupModal}

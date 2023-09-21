@@ -29,10 +29,6 @@ const Navbar = ({ openSignupModal, openLoginModal }) => {
                     <Link to="/">
 
                         <button className="text-warning btn ">Home</button>
-
-                    </Link>
-                    <Link to="/about-us">
-                        <button className="text-warning btn">About Us</button>
                     </Link>
                     <Link to="/posts">
                         <button className="text-warning btn">Posts</button>
@@ -40,6 +36,11 @@ const Navbar = ({ openSignupModal, openLoginModal }) => {
                     <Link to="/shuffle">
                         <button className="text-warning btn">Shuffle</button>
                     </Link>
+
+                    <Link to="/about-us">
+                        <button className="text-warning btn">About Us</button>
+                    </Link>
+
                     {currentUser ? (
                         <>
                             <strong className="me-3 text-white fw-bold">{currentUser.email}</strong>
