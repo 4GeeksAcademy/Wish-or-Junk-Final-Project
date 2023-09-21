@@ -1,40 +1,55 @@
-// Import the functions you need from the SDKs you need
+// Import the necessary modules from Firebase SDK
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { sendPasswordResetEmail } from "firebase/auth";
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    onAuthStateChanged,
+    signInWithEmailAndPassword,
+    signOut,
+    updateProfile,
+    sendPasswordResetEmail
+} from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useEffect, useState } from "react";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyD8RITjSduafW403ncXWHkSEPQKR-B7r44",
-    authDomain: "login-and-signup-for-woz-67bb3.firebaseapp.com",
-    projectId: "login-and-signup-for-woz-67bb3",
-    storageBucket: "login-and-signup-for-woz-67bb3.appspot.com",
-    messagingSenderId: "402438109456",
-    appId: "1:402438109456:web:71eed4cdc1dba7557ccd95",
-    measurementId: "G-K6ZSKKLC00"
+    apiKey: "AIzaSyA36DyFEiFOb_fe13PJN8hPsMkpdHZHDQU",
+    authDomain: "wish-or-junk---image-upload.firebaseapp.com",
+    projectId: "wish-or-junk---image-upload",
+    storageBucket: "wish-or-junk---image-upload.appspot.com",
+    messagingSenderId: "1049724261485",
+    appId: "1:1049724261485:web:b6f1e3f054a751020f9b64",
+    measurementId: "G-D41B8V8TVS"
 };
 
 // Initialize Firebase
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 const auth = getAuth();
+const storage = getStorage();
+
+// Export firestore database
+export const db = getFirestore(app);
+
+// Authentication functions
 export function signup(email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
 }
+
 export function login(email, password) {
     return signInWithEmailAndPassword(auth, email, password);
 }
+
 export function logout() {
     return signOut(auth);
 }
+
 export function resetPassword(email) {
     return sendPasswordResetEmail(auth, email);
 }
-//Custom hook
+
+// Custom hook to watch for user authentication state changes
 export function useAuth() {
     const [currentUser, setCurrentUser] = useState();
     useEffect(() => {
@@ -42,4 +57,19 @@ export function useAuth() {
         return unsub;
     }, [])
     return currentUser;
+}
+
+// Storage utilities
+export async function upload(file, currentUser, setLoading) {
+    const fileRef = ref(storage, currentUser.uid + '.png');
+
+    setLoading(true);
+
+    const snapshot = await uploadBytes(fileRef, file);
+    const photoURL = await getDownloadURL(fileRef);
+
+    updateProfile(currentUser, { photoURL });
+
+    setLoading(false);
+    alert("Uploaded File!");
 }

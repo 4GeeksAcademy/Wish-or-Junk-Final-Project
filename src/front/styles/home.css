@@ -26,18 +26,10 @@ body {
   background-color: rgba(0, 0, 0, 0.65);
 }
 
+
 .links {
   background-image: linear-gradient(-134deg, #d4af37 0%, #6d4300 100%);
   width: auto;
-}
-
-.mission {
-  height: 80vh;
-  max-width: auto;
-}
-
-.main {
-  border-radius: 25px;
 }
 
 .modal-container {

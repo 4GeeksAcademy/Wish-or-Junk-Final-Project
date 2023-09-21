@@ -65,3 +65,4 @@ const Navbar = ({ openSignupModal, openLoginModal }) => {
 };
 
 export default Navbar;
+

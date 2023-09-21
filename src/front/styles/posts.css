@@ -1,5 +1,6 @@
-.post .card {
+.post .post-card {
     border: none;
+    width: 18rem;
     border-radius: 15px;
     background-color: rgb(30, 30, 30);
 }
