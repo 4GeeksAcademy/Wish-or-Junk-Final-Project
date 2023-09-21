@@ -74,6 +74,7 @@ export const PostModal = () => {
                                     <button type="submit" className="btn btn-warning ms-2">Submit Post</button>
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
