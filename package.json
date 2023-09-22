@@ -73,6 +73,7 @@
 		]
 	},
 	"dependencies": {
+		"@fortawesome/react-fontawesome": "^0.2.0",
 		"firebase": "^10.4.0",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
