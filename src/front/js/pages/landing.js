@@ -28,16 +28,15 @@ export const Landing = () => {
       <Navbar openSignupModal={openSignupModal} openLoginModal={openLoginModal} />
       <div className="container-fluid d-flex text-light mission main mt-2 mb-2 border border-4 rounded-3">
         <div className="mt-4 mx-auto">
-          <h3 className="mt-2 ms-1 py-2 fs-4">
-            THINK YOU WITNESSED A SHOOTING STAR?
+          <h4 className="mt-2 ms-1 py-2">
+            Have you wished upon a shooting star? Maybe not as often as you think!
+          </h4>
+          <h3 className="ms-1 py-2 w-75">
+            In any 15-minute interval, there's a 20% probability of observing at least one fireball in the sky. What many think are shooting stars though turn out to be satellites, space crafts, and other human-made debris, posing as comets and meteors in the night sky.
           </h3>
-          <h1 className="ms-1 py-2 w-75">
-            In any 15-minute interval, there's a 20% probability of observing at
-            least one shooting star.
-          </h1>
-          <h3 className="ms-1 py-2 fs-4">
-            WE CAN HELP YOU VERIFY THAT FIREBALL, SIGN UP AND FIND OUT.
-          </h3>
+          <h5 className="ms-1 py-2">
+            Our site is here to help you confirm what you saw and help you determine if your wish will be coming true. Explore our posts and sign up now!
+          </h5>
           <Link to="/sign-up">
             <button className="btn links fw-bold mt-4 ms-2">
               Explore Here!
