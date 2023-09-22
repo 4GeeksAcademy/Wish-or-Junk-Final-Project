@@ -1,14 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { useAuth, logout } from "../../firebase.js";
 import logo from "../../img/wish_or_junk_logo.png"
 
 const Navbar = ({ openSignupModal, openLoginModal }) => {
     const currentUser = useAuth();
+    const navigate = useNavigate();
 
     const handleLogout = async () => {
         try {
             await logout();
+            navigate("/");
 
         } catch (error) {
             console.error("Error logging out: ", error.message);
@@ -45,12 +47,13 @@ const Navbar = ({ openSignupModal, openLoginModal }) => {
 
                     {currentUser ? (
                         <>
-                            <strong className="me-3 text-white fw-bold">{currentUser.email}</strong>
+                            <Link to="/profile" className="me-3 text-white fw-bold">
+                                {currentUser.email}
+                            </Link>
                             <button className="btn links fw-bold me-2" onClick={handleLogout}>
                                 Logout
                             </button>
                         </>
-
                     ) : (
                         <>
                             <button className="btn links fw-bold me-2" onClick={openLoginModal}>
