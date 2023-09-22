@@ -1,0 +1,26 @@
+.shuffle {
+  border-radius: 15px;
+}
+
+.img-fluid {
+  /* height: 400px; */
+  width: 500px;
+  /* aspect-ratio: 1/1; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-left:  40px;
+}
+
+.card-footer {
+  height: 400px;
+  width: 600px;
+  background-color: rgba(80, 39, 160, 0.298);
+  color: white;
+  border: solid 1px rgb(109, 9, 232);
+}
+
+p .shuffle-text {
+  height: 390px;
+  
+}
+
+

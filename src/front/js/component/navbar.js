@@ -37,8 +37,8 @@ const Navbar = ({ openSignupModal, openLoginModal }) => {
                     <Link to="/posts">
                         <button className="text-warning btn">Posts</button>
                     </Link>
-                    <Link to="/shuffle">
-                        <button className="text-warning btn">Shuffle</button>
+                    <Link to="/space-facts">
+                        <button className="text-warning btn">Space Facts</button>
                     </Link>
 
                     <Link to="/about-us">

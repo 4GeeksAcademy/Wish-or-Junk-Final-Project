@@ -18,14 +18,13 @@ body {
 
 .mission {
   height: 80vh;
-  max-width: auto;
+  width: 90vw;
 }
 
 .main {
   border-radius: 25px;
   background-color: rgba(0, 0, 0, 0.65);
 }
-
 
 .links {
   background-image: linear-gradient(-134deg, #d4af37 0%, #6d4300 100%);
@@ -86,6 +85,7 @@ body {
 .card-body {
   position: relative;
   z-index: 2;
+  margin-bottom: 40px;
 }
 
 .skewed {
@@ -124,7 +124,6 @@ body {
   margin: 0;
   padding: 0;
 } */
-
 
 .row.d-flex.justify-content-center.align-items-center.h-100 {
   position: relative;
