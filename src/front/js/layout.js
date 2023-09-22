@@ -13,6 +13,9 @@ import { PostSlide } from "./pages/postSlide";
 import { Profile } from "./pages/profile";
 import { AboutUs } from "./pages/aboutus";
 import { Sitemap } from "./pages/sitemap";
+
+
+
 //create your first component
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain

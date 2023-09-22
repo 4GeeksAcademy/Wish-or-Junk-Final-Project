@@ -1,0 +1,20 @@
+.article-card {
+    border-radius: 13px;
+    background-color: rgb(30, 30, 30);
+   
+}
+
+.create-article-card {
+    border-radius: 13px;
+    background-color: rgb(30, 30, 30);
+}
+
+.article-content {
+    margin-left: 70px;
+    color: white;
+    width: 350px;
+}
+
+.publish-button {
+    color: black;
+}

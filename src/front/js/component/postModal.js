@@ -1,5 +1,6 @@
 import React from "react";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useAuth, upload }  from  "../../firebase.js";
 import "../../styles/postmodal.css";
 
 export const PostModal = () => {
@@ -12,8 +13,31 @@ export const PostModal = () => {
         setNewPost("")
     }
 
+    const currentUser = useAuth();
+
+    const [photo, setPhoto] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [photoURL, setPhotoURL] = useState("https://theinfiniteexperience.world/files/common/Sans-titre-9.png");
+
+    function handleChange(e) {
+        if (e.target.files[0]) {
+            setPhoto(e.target.files[0])
+        }
+    }
+
+    function handleClick() {
+        upload(photo, currentUser, setLoading);
+    }
+
+    useEffect(() => {
+        if (currentUser?.photoURL) {
+            setPhotoURL(currentUser.photoURL);
+        }
+
+    }, [currentUser])
+
     const picURL = "https://star-name-registry.com/blog/images/d/0/1/f/a/d01faec7ef04415eec34c1bfe61913e167fb26c7-snr-blog-37-resized.jpg";
-    
+
     return (
         <div className="container d-flex justify-content-center col-6">
             <button type="button" className="btn btn-warning d-grid col-6"
@@ -40,6 +64,19 @@ export const PostModal = () => {
                                     />
                                 </div>
                                 <div className="mb-3">
+                                    <div className="input_style">
+                                        <input className="hide_file" type="file" onChange={handleChange} placeholder="" />
+                                        <button className="choose-file-button" disabled={loading || !photo} onClick={handleClick}>Upload</button>
+                                    </div>
+                                    <label htmlFor="message-text" className="col-form-label">Title:</label>
+                                    <input
+                                        value={newPost}
+                                        onChange={e => setNewPost(e.target.value)}
+                                        type="text"
+                                        className="form-control"
+                                        id="message-text"
+                                        rows="5">
+                                    </input>
                                     <label htmlFor="message-text" className="col-form-label">Message:</label>
                                     <textarea
                                         value={newPost}
