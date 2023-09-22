@@ -47,9 +47,10 @@ export const Articles = () => {
                             <img src={imageUrl} alt="title" style={{ height: 180, width: 220 }} />
                         </div>
                         <div className="article-content col-6">
-                            <h2>{title}</h2>
-                            <p>{createdAt.toDate().toDateString()}</p>
-                            <h4>{description}</h4>
+                            <h2 className="post-title" style={{ fontSize: "18px" }}>{title}</h2>
+                            <p className="post-date" style={{ fontSize: "12px" }}>Post Date: {createdAt.toDate().toDateString()}</p>
+                            <h4  className="post-comments" style={{ fontSize: "14px" }}>{description}</h4>
+                            <label className="comment-label mb-2">Comment:</label>
                             <div className="button-group d-flex flex-row mb-3 pt-3">
                                 <button className="btn me-3 btn-outline-success" onClick={() => handleWishClick(id)}>
                                     <i className="fa-solid fa-hand-spock fa-xl"></i> Wish {wishCounts[id] || 0}
