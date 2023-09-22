@@ -7,7 +7,7 @@ export const AboutUs = () => {
 
 
     return (
-        <div>
+        <div className="wrapper">
             <Navbar />
             <div className="about-us-container">
                 <header><h1><strong>About Us</strong></h1></header>

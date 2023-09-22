@@ -10,6 +10,7 @@ import {
     sendPasswordResetEmail
 } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { collection, doc, getDoc, setDoc, updateDoc, increment } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useEffect, useState } from "react";
 
@@ -71,4 +72,30 @@ export async function upload(file, currentUser, setLoading) {
 
     setLoading(false);
     alert("Uploaded File!");
+}
+export async function updateWishOrJunkCount(articleId, type) {
+    const articleRef = doc(db, 'Articles', articleId);
+    
+    // First, check if the document exists
+    const docSnapshot = await getDoc(articleRef);
+    if (!docSnapshot.exists()) {
+        // If the document doesn't exist, initialize with default values
+        await setDoc(articleRef, { wish: 0, junk: 0 });
+    }
+
+    if (type === 'wish') {
+        await updateDoc(articleRef, { wish: increment(1) });
+    } else if (type === 'junk') {
+        await updateDoc(articleRef, { junk: increment(1) });
+    }
+
+    const articleSnap = await getDoc(articleRef);
+    return articleSnap.data()[type];
+}
+
+export async function getWishAndJunkCount(articleId) {
+    const articleRef = doc(db, 'Articles', articleId);
+    const articleSnap = await getDoc(articleRef);
+    const data = articleSnap.data();
+    return { wish: data?.wish || 0, junk: data?.junk || 0 };
 }
