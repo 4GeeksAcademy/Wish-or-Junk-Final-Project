@@ -75,7 +75,7 @@ export const AddArticle = () => {
     };
     return (
 
-        <div className="create-article-card p-3 mt-4 mx-2" style={{ position: "fixed", color: "white" }}>
+        <div className="create-article-card p-3 mt-4 mx-2" style={{ position: "fixed", color: "white", width: "580px" }}>
             <>
                 <h2 className="create-post-heading mb-4" style={{ fontSize: "18px" }}>Create Post</h2>
                 <div className="form-group">

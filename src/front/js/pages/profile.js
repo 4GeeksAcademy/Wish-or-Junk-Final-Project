@@ -47,8 +47,10 @@ export const Profile = () => {
           </div>
           <div className="card-mid d-flex">
             <div className="settings">
-              <p className="settings-title text-wrap">Name</p>
-              <p className="settings-title text-wrap">Email</p>
+              <p className="settings-title text-wrap">Ron Jon</p>
+              <p className="settings-title text-wrap">ronjon@bluemail.com</p>
+              <p className="settings-title text-wrap">88 Posts</p>
+              <p className="settings-title text-wrap">Member since 2023</p>
             </div>
             <div className="mission-statement text-wrap px-3 pt-3">
               <h5>Mission Statement</h5>

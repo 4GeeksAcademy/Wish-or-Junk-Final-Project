@@ -4,13 +4,14 @@
 
 .img-fluid {
   /* height: 400px; */
-  width: 350px;
-  aspect-ratio: 1/1;
+  width: 500px;
+  /* aspect-ratio: 1/1; */
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-left:  40px;
 }
 
 .card-footer {
-  height: 395px;
+  height: 400px;
   width: 600px;
   background-color: rgba(80, 39, 160, 0.298);
   color: white;
@@ -21,3 +22,5 @@ p .shuffle-text {
   height: 390px;
   
 }
+
+
