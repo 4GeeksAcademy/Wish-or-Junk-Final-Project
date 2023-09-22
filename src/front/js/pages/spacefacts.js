@@ -2,9 +2,9 @@ import React from "react";
 import { useEffect, useState } from "react";
 import Navbar from '../component/navbar';
 import { Footer } from "../component/footer";
-import "../../styles/shuffle.css";
+import "../../styles/spacefacts.css";
 
-export const Shuffle = () => {
+export const Spacefacts = () => {
   const [apod, setApod] = useState({});
   useEffect(() => {
     async function apodData() {
