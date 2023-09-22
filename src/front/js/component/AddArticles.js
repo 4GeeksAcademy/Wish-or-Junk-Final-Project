@@ -79,7 +79,7 @@ export const AddArticle = () => {
             <>
                 <h2 className="create-post-heading mb-4" style={{ fontSize: "18px" }}>Create Post</h2>
                 <div className="form-group">
-                    <label className="mb-2" htmlFor="">Title</label>
+                    <label className="mb-2" htmlFor="">Title:</label>
                     <input
                         type="text"
                         name="title"
@@ -91,7 +91,7 @@ export const AddArticle = () => {
                 </div>
 
                 {/* description */}
-                <label className="mb-2" htmlFor="">Description</label>
+                <label className="mb-2" htmlFor="">Comment:</label>
                 <textarea
                     name="description"
                     className="form-control mb-4"
@@ -101,7 +101,7 @@ export const AddArticle = () => {
                 />
 
                 {/* image */}
-                <label className="mb-2" htmlFor="">Image</label>
+                <label className="mb-2" htmlFor="">Image:</label>
                 <input
                     type="file"
                     name="image"
