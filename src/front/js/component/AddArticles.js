@@ -77,37 +77,38 @@ export const AddArticle = () => {
 
         <div className="create-article-card p-3 mt-4 mx-2" style={{ position: "fixed", color: "white" }}>
             <>
-                <h2>Create article</h2>
+                <h2 className="create-post-heading mb-4" style={{ fontSize: "18px" }}>Create Post</h2>
                 <div className="form-group">
-                    <label htmlFor="">Title</label>
+                    <label className="mb-2" htmlFor="">Title</label>
                     <input
                         type="text"
                         name="title"
                         className="form-control mb-3"
                         value={formData.title}
                         onChange={(e) => handleChange(e)}
+                        style={{ color: "black" }}
                     />
                 </div>
 
                 {/* description */}
-                <label htmlFor="">Description</label>
+                <label className="mb-2" htmlFor="">Description</label>
                 <textarea
                     name="description"
                     className="form-control mb-4"
                     value={formData.description}
                     onChange={(e) => handleChange(e)}
-                    style={{height: 200}}
+                    style={{ height: 200, color: "black" }}
                 />
 
                 {/* image */}
-                <label htmlFor="">Image</label>
+                <label className="mb-2" htmlFor="">Image</label>
                 <input
                     type="file"
                     name="image"
                     accept="image/*"
                     className="form-control"
                     onChange={(e) => handleImageChange(e)}
-                    
+
                 />
 
                 {progress === 0 ? null : (
@@ -123,7 +124,7 @@ export const AddArticle = () => {
                 <button
                     className="form-control btn bg-warning mt-2"
                     onClick={handlePublish}
-                    style={{color: "black"}}
+                    style={{ color: "black" }}
                 >
                     Publish
                 </button>
