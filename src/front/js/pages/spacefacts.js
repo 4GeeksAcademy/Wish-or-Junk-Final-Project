@@ -20,12 +20,12 @@ export const Spacefacts = () => {
       <Navbar />
       <div className="container">
         <div className="card shuffle bg-dark text-white mx-3">
-          <div className="card-header">
-            <h1 className="mt-2 mb-0 ps-2 display-4">{apod.title}</h1>
-            <h4 className="mb-2 pe-2 text-end">{apod.date}</h4>
+          <div className="card-header d-flex justify-content-between">
+            <h1 className="mt-2 mb-0 ps-2 display-4" style={{ fontSize: "24px" }}>{apod.title}</h1>
+            <h4 className="mb-2 pe-2 text-end" style={{ fontSize: "24px" }}>{apod.date}</h4>
           </div>
           <div className="card-body">
-            <div className="body text-center">
+            <div className="body d-flex text-center">
               {apod.media_type === "image" ? (
                 <img src={apod.url} className="img-fluid rounded-2" />
               ) : (
@@ -33,8 +33,9 @@ export const Spacefacts = () => {
                   <source src={apod.url} />
                 </video>
               )}
-              <div className="card-footer">
-                <p className="border border-secondary-emphasis rounded-2 p-3 text-start mt-2">
+              <div className="card-footer border-secondary-emphasis mx-5 overflow-scroll">
+                <label className="apod-heading">Explanation: </label>
+                <p className="shuffle-text rounded-2 p-0 text-start" style={{ fontSize: "18px" }}>
                   {apod.explanation}
                 </p>
               </div>

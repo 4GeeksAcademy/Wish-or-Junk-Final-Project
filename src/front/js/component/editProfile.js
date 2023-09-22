@@ -76,7 +76,7 @@ export const EditProfile = props => {
                 className="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-sm "
-                placeholder="Name"
+                placeholder="Ron Jon"
               />
               <input
                 type="text"
@@ -84,7 +84,7 @@ export const EditProfile = props => {
                 className="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-sm "
-                placeholder="e-mail"
+                placeholder="ronjon@bluemail.com"
               />
 
               {/* social media handles */}
@@ -94,7 +94,7 @@ export const EditProfile = props => {
                 className="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-sm "
-                placeholder="instagram"
+                placeholder="https://www.instagram.com/"
               />
               <input
                 type="text"
@@ -102,7 +102,7 @@ export const EditProfile = props => {
                 className="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-sm "
-                placeholder="twitter"
+                placeholder="https://twitter.com/?lang=en"
               />
               <input
                 type="text"
@@ -110,7 +110,7 @@ export const EditProfile = props => {
                 className="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-sm "
-                placeholder="facebook"
+                placeholder="https://www.facebook.com/"
               />
               <input
                 type="text"
@@ -118,10 +118,10 @@ export const EditProfile = props => {
                 className="form-control"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-sm "
-                placeholder="linkedin"
+                placeholder="https://www.linkedin.com/?trk=guest_homepage-basic_nav-header-logo"
               />
 
-              <button>Submit</button>
+              <button className="btn" disabled>Submit</button>
             </form>
             <div className="mission-social d-flex flex-column mb-3 justify-content-center">
               <div className="mission-statement-2 text-wrap px-3 pt-3">
@@ -131,6 +131,10 @@ export const EditProfile = props => {
                     className="form-control"
                     id="missionstatement"
                     rows="4"
+                    placeholder="I will seek to learn, for learning is the basis for growth and
+                    growing is the key to living. I will seek first to understand,
+                    for understanding is the key to finding value and value is the
+                    basis for respect, decisions and action."
                   ></textarea>
                 </div>
               </div>
