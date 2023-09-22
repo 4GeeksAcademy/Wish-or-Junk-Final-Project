@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth, logout } from "../../firebase.js";
+import logo from "../../img/wish_or_junk_logo.png"
 
 const Navbar = ({ openSignupModal, openLoginModal }) => {
     const currentUser = useAuth();
@@ -20,6 +21,7 @@ const Navbar = ({ openSignupModal, openLoginModal }) => {
             <div className="container-fluid">
                 <Link to="/">
                     <span className="navbar-brand ms-0 btn fw-bold fs-1 project">
+                        <img className="me-1 mb-3" src={logo} height={50} width={50} />
                         <strong className="text-warning text-gradient">Wish</strong>{" "}
                         <span className="skewed text-white">Or</span>{" "}
                         <i className="text-secondary text-gradient">Junk</i>{" "}
